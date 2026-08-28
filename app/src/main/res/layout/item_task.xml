@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Criar layout da tela de login do app" />
+
+            <ImageButton
+                android:id="@+id/buttonBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Anterior"
+                android:src="@drawable/setatop"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonEditar"
+                app:layout_constraintEnd_toStartOf="@+id/buttonDelete"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/buttonEditar" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDelete"
+                style="@style/ButtonTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Remover"
+                android:textSize="12sp"
+                app:backgroundTint="@color/color_delete"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonEditar"
+                app:layout_constraintEnd_toStartOf="@+id/buttonEditar"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/buttonBack"
+                app:layout_constraintTop_toTopOf="@+id/buttonEditar" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonEditar"
+                style="@style/ButtonTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="32dp"
+                android:text="Editar"
+                android:textSize="12sp"
+                app:backgroundTint="@color/color_default2"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/buttonDetails"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/buttonDelete"
+                app:layout_constraintTop_toBottomOf="@+id/textDescription" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDetails"
+                style="@style/ButtonTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Detalhes"
+                android:textSize="12sp"
+                app:backgroundTint="@color/color_details"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonEditar"
+                app:layout_constraintEnd_toStartOf="@+id/buttonForward"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/buttonEditar"
+                app:layout_constraintTop_toTopOf="@+id/buttonEditar" />
+
+            <ImageButton
+                android:id="@+id/buttonForward"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Proximo"
+                android:src="@drawable/setaright"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonEditar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/buttonDetails"
+                app:layout_constraintTop_toTopOf="@+id/buttonEditar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:padding="20dp">
+    <!-- 1 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textviewTitle"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Atenção" />
+
+    <!-- 2 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        />
+
+    <!-- 3 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textviewMessage"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:text="Mensagem" />
+
+    <!-- 4 -->
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonOk"
+        android:layout_marginTop="16dp"
+        android:text="Entendi"
+        style="@style/ButtonTheme"
+        app:backgroundTint="@color/white"
+        android:textColor="@color/color_default"
+        xmlns:app="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>
