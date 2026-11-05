@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "33132488047",
+    "firebase_url": "https://taskapp3-29cd3-default-rtdb.firebaseio.com",
+    "project_id": "taskapp3-29cd3",
+    "storage_bucket": "taskapp3-29cd3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33132488047:android:d62dacb82df0948be7349a",
+        "android_client_info": {
+          "package_name": "com.fernando.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ7KurQQkvpc7wvUrvVoq2_GzDMD0D-Vc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
