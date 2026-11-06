@@ -101,8 +101,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
                 android:visibility="invisible"
-                tools:visibility="visible"
-                />
+                tools:visibility="visible" />
         </LinearLayout>
     </LinearLayout>
 
