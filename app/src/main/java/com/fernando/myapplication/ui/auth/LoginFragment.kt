@@ -1,21 +1,26 @@
 package com.fernando.myapplication.ui.auth
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.fernando.myapplication.R
 import com.fernando.myapplication.databinding.FragmentLoginBinding
 import com.fernando.myapplication.util.showBottomSheet
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +34,8 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        auth = Firebase.auth
 
         initListener()
     }
@@ -53,8 +60,15 @@ class LoginFragment : Fragment() {
 
         if (email.isNotBlank()) {
             if (senha.isNotBlank()) {
-                //Comentário temporário somente para testar a validação dos dados
-                findNavController().navigate(R.id.action_global_homeFragment)
+                binding.progressBar.isVisible = true
+                auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener { task ->
+                    binding.progressBar.isVisible = false
+                    if (task.isSuccessful) {
+                        findNavController().navigate(R.id.action_global_homeFragment)
+                    } else {
+                        showBottomSheet(message = task.exception?.message ?: getString(R.string.error_generic))
+                    }
+                }
             } else {
                showBottomSheet(message = getString(R.string.password_empty))
             }
